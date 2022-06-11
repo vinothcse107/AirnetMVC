@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace AirnetMVC.DataService
@@ -24,6 +24,7 @@ namespace AirnetMVC.DataService
         public string Name { get; set; }
         public string Mobile { get; set; }
         public string Email { get; set; }
+        public DateTime RechargeTime { get; set; }
         // ----------------------------------------------
         [ForeignKey("Plans")]
         public Guid PlanId { get; set; }
