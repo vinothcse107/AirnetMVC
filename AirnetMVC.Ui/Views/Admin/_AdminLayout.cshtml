@@ -16,13 +16,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("AirNet", "ViewPrepaidPlans", "Plan", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Plans", "Index", "Plans")</li>
+                    <li>@Html.ActionLink("Prepaid", "ViewPrepaidPlans", "Plan")</li>
+                    <li>@Html.ActionLink("PostPaid", "ViewPostpaidPlans", "Plan")</li>
+                    <li>@Html.ActionLink("AddOns", "ViewAddonPlans", "Plan")</li>
                 </ul>
             </div>
         </div>

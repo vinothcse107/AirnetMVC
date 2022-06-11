@@ -1,0 +1,60 @@
+﻿@model AirnetMVC.DataService.Plan
+
+@{
+    ViewBag.Title = "PlanDetails";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<h2>PlanDetails</h2>
+
+<div>
+    <h4>Plan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlanName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlanName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlanValidity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlanValidity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlanDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlanDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlanPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlanPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlanOffers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlanOffers)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditPlan", new { id = Model.PlanId }) |
+    @Html.ActionLink("Back to List", "View" + @Html.DisplayFor(model => model.PlanType) + "Plans")
+</p>
