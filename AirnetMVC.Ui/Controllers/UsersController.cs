@@ -58,9 +58,9 @@ namespace AirnetMVC.Ui.Controllers
             return View(x);
         }
 
-        public ActionResult EditUser(string userId)
+        public ActionResult EditUser(string id)
         {
-            var x = userRepository.GetUserById(userId);
+            var x = userRepository.GetUserById(id);
             return View(x);
         }
 
@@ -71,15 +71,15 @@ namespace AirnetMVC.Ui.Controllers
             return RedirectToAction("ViewAllUsers");
         }
 
-        public ActionResult DeleteUser(string userId)
+        public ActionResult DeleteUser(string id)
         {
-            userRepository.DeleteUser(userId);
+            userRepository.DeleteUser(id);
             return RedirectToAction("ViewAllUsers");
         }
 
-        public ActionResult ViewUserDetail(string userId)
+        public ActionResult ViewUserDetail(string id)
         {
-            var x = userRepository.GetUserById(userId);
+            var x = userRepository.GetUserById(id);
             return View(x);
         }
     }

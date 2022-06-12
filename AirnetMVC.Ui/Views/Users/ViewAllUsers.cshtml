@@ -30,7 +30,7 @@
 @foreach (var item in Model) {
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Username)
+            @Html.DisplayFor(modelItem => item.Username)
         </th>
         <td>
             @Html.DisplayFor(modelItem => item.Email)

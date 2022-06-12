@@ -1,9 +1,6 @@
 ﻿@model IEnumerable<AirnetMVC.DataService.Review>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-
+<div class="justify-content-center"></div>
 @foreach (var item in Model)
 {
     <div class="card w-50">
@@ -22,4 +19,7 @@
             @*<button class="btn btn-danger text-white">@Html.ActionLink("Delete", "Delete", new { id = item.ReviewId }) </button>*@
         </div>
     </div>
+    <br />
+
+
 }
