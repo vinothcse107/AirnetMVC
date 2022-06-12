@@ -1,16 +1,24 @@
 ﻿@model AirnetMVC.DataService.Plan
 
 @{
-    ViewBag.Title = "PlanDetails";
-    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+    ViewBag.Title = "DeletePlan";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>PlanDetails</h2>
+<h2>DeletePlan</h2>
 
+<h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>Plan</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PlanType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlanType)
+        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.PlanName)
@@ -53,11 +61,13 @@
         </dd>
 
     </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List","View"+@Html.DisplayFor(model => model.PlanType)+"Plans")
+        </div>
+    }
 </div>
-<div class="text-center">
-    @Html.Action("ReviewsPartialView", "Review" , @Html.DisplayFor(model => model.PlanId))
-</div>
-<p>
-    @Html.ActionLink("Edit", "EditPlan", new { id = Model.PlanId }) |
-    @Html.ActionLink("Back to List", "View" + @Html.DisplayFor(model => model.PlanType) + "Plans")
-</p>

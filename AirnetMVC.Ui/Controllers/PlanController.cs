@@ -6,8 +6,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace AirnetMVC.Ui.Controllers
-{
+namespace AirnetMVC.Ui.Controllers { 
+
     public class PlanController : Controller
     {
         // GET: Plans
@@ -21,24 +21,24 @@ namespace AirnetMVC.Ui.Controllers
         public ActionResult ViewPrepaidPlans()
         {
             IEnumerable<Plan> plans = plansRepository.GetPrepaidPlans();
-            return View("/Views/Admin/Plan/ViewPrepaidPlans.cshtml",plans);
+            return View(plans);
         }
         public ActionResult ViewPostpaidPlans()
         {
             IEnumerable<Plan> plans = plansRepository.GetPostpaidPlans();
-            return View("/Views/Admin/Plan/ViewPostpaidPlans.cshtml", plans);
+            return View(plans);
         }
 
         public ActionResult ViewAddonPlans()
         {
             IEnumerable<Plan> plans = plansRepository.GetAddonPlans();
-            return View("/Views/Admin/Plan/ViewAddonPlans.cshtml", plans);
+            return View(plans);
         }
 
 
         public ActionResult CreatePlan()
         {
-            return View("/Views/Admin/Plan/CreatePlan.cshtml");
+            return View();
         }
         [HttpPost]
         public ActionResult CreatePlan(Plan plan)
@@ -51,7 +51,7 @@ namespace AirnetMVC.Ui.Controllers
         public ActionResult PlanDetails(Guid id)
         {
             Plan plan = plansRepository.GetPlanById(id);
-            return View("/Views/Admin/Plan/PlanDetails.cshtml", plan);
+            return View(plan);
         }
         public ActionResult DeletePlan(Guid id)
         {
@@ -62,7 +62,7 @@ namespace AirnetMVC.Ui.Controllers
         public ActionResult EditPlan(Guid id)
         {
             Plan plan = plansRepository.GetPlanById(id);
-            return View("/Views/Admin/Plan/EditPlan.cshtml",plan);
+            return View(plan);
 
 
         }

@@ -242,14 +242,14 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Admin\Plan\CreatePlan.cshtml" />
-    <Content Include="Views\Admin\Plan\DeletePlan.cshtml" />
-    <Content Include="Views\Admin\Plan\EditPlan.cshtml" />
-    <Content Include="Views\Admin\Plan\PlanDetails.cshtml" />
-    <Content Include="Views\Admin\Plan\ViewAddonPlans.cshtml" />
-    <Content Include="Views\Admin\Plan\ViewPostpaidPlans.cshtml" />
-    <Content Include="Views\Admin\Plan\ViewPrepaidPlans.cshtml" />
-    <Content Include="Views\Admin\_AdminLayout.cshtml" />
+    <Content Include="Views\Plan\CreatePlan.cshtml" />
+    <Content Include="Views\Plan\DeletePlan.cshtml" />
+    <Content Include="Views\Plan\EditPlan.cshtml" />
+    <Content Include="Views\Plan\PlanDetails.cshtml" />
+    <Content Include="Views\Plan\ViewAddonPlans.cshtml" />
+    <Content Include="Views\Plan\ViewPostpaidPlans.cshtml" />
+    <Content Include="Views\Plan\ViewPrepaidPlans.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Shared\PartialViews\ReviewsPartialView.cshtml" />
   </ItemGroup>
   <ItemGroup>
