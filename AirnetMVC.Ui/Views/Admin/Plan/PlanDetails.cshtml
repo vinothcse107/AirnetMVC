@@ -54,6 +54,9 @@
 
     </dl>
 </div>
+<div class="text-center">
+    @Html.Action("ReviewsPartialView", "Review" , @Html.DisplayFor(model => model.PlanId))
+</div>
 <p>
     @Html.ActionLink("Edit", "EditPlan", new { id = Model.PlanId }) |
     @Html.ActionLink("Back to List", "View" + @Html.DisplayFor(model => model.PlanType) + "Plans")
