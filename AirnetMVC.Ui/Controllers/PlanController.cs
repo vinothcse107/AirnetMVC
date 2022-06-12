@@ -12,9 +12,11 @@ namespace AirnetMVC.Ui.Controllers {
     {
         // GET: Plans
         public PlansRepository plansRepository;
+        public ReviewRepository reviewsRepository;
         public PlanController()
         {
             plansRepository = new PlansRepository();
+            reviewsRepository = new ReviewRepository();
         }
         //[Route("GetAllPlans")]
 
@@ -63,8 +65,6 @@ namespace AirnetMVC.Ui.Controllers {
         {
             Plan plan = plansRepository.GetPlanById(id);
             return View(plan);
-
-
         }
         [HttpPost]
         public ActionResult EditPlan(Plan plan)
