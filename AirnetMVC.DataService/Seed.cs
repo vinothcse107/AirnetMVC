@@ -10,7 +10,8 @@ namespace AirnetMVC.DataService
     public class Seed
     {
         public AirnetContext _context;
-        public const string BasePath = @"C:\Users\vinos\source\repos\AirnetMVC\AirnetMVC.DataService\Data\";
+        /*public const string BasePath = @"C:\Users\vinos\source\repos\AirnetMVC\AirnetMVC.DataService\Data\";*/
+        public const string BasePath = @"C:\Users\mbhan\source\repos\AirnetMVC\AirnetMVC.DataService\Data\";
         public Seed(AirnetContext context)
         {
             _context = context;
