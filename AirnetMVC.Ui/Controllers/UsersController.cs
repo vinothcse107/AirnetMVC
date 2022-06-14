@@ -46,7 +46,7 @@ namespace AirnetMVC.Ui.Controllers
                 if (val)
                 {
                     if (x.UserRole == "Admin") return RedirectToAction("ViewPrepaidPlans", "Plan");
-                    else if (x.UserRole == "Member") return RedirectToAction("ViewAddonPlans" , "Plan");
+                    else if (x.UserRole == "Member") return RedirectToAction("ViewPrepaidPlans", "Client");
                 }
             }
             return RedirectToAction("Login");

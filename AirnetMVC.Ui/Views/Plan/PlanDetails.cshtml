@@ -51,12 +51,20 @@
         <dd>
             @Html.DisplayFor(model => model.PlanOffers)
         </dd>
+        <dt>
+            OverAllRating
+        </dt>
+
+        <dd>
+            @ViewBag.OverAllRating
+        </dd>
+
 
     </dl>
 </div>
-<div
-     <h1> Reviews </h1>
-    @Html.Action("ReviewsPartialView", "Review" , Model.PlanId)
+<h1 class="h1">Reviews</h1>
+<div>
+    @Html.Action("ReviewsPartialView", "Review", Model.PlanId)
 </div>
 <p>
     @Html.ActionLink("Edit", "EditPlan", new { id = Model.PlanId }) |

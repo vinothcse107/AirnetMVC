@@ -42,10 +42,11 @@ namespace AirnetMVC.Ui.Repository
             var planReviews = context.Reviews.Where(review => review.ReviewId == ReviewId).FirstOrDefault();
             return planReviews;
         }
-        public double GetOverAllPlanRating(Guid PlanId)
+        public float GetOverAllPlanRating(Guid PlanId)
         {
-            var planReviews = context.Reviews.Where(review => review.PlanId == PlanId)
-                        .Select(s => s.ReviewRating).Average();
+            var planReviews = context.Reviews.Where(p => p.PlanId == PlanId) != null 
+                        ? (float)context.Reviews.Where(review => review.PlanId == PlanId)
+                        .Select(s => s.ReviewRating).Average() : 0.0f;
             return planReviews;
         }
 
