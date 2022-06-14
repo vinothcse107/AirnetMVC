@@ -1,4 +1,5 @@
-﻿using System;
+﻿using dotenv.net;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,8 +11,14 @@ namespace AirnetMVC.DataService
     public class Seed
     {
         public AirnetContext _context;
-        /*public const string BasePath = @"C:\Users\vinos\source\repos\AirnetMVC\AirnetMVC.DataService\Data\";*/
-        public const string BasePath = @"C:\Users\mbhan\source\repos\AirnetMVC\AirnetMVC.DataService\Data\";
+        private static IDictionary<string, string> envVars = DotEnv.Fluent()
+            .WithExceptions()
+            .WithEnvFiles()
+            .WithTrimValues()
+            .WithOverwriteExistingVars()
+            .WithProbeForEnv(probeLevelsToSearch: 6)
+            .Read();
+        private string BasePath = envVars["SEED_DATASOURCE"];
         public Seed(AirnetContext context)
         {
             _context = context;
