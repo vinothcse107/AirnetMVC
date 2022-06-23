@@ -1,72 +1,19 @@
 ﻿@model AirnetMVC.DataService.Plan
 
-@{
-    ViewBag.Title = "PlanDetails";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
-
-<h2>PlanDetails</h2>
+@{ }
 
 <div>
-    <h4>Plan</h4>
-    <hr />
-    <dl class="dl-horizontal">
+    <h5 class="text-center me-4 lead">Plan Details</h5>
+    @Model.PlanDetails
+    
+    <h5 class="text-center me-4 lead mt-4">Plan Offers</h5>
+    @Model.PlanOffers
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PlanName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PlanName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PlanValidity)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PlanValidity)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PlanDetails)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PlanDetails)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PlanPrice)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PlanPrice)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PlanOffers)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PlanOffers)
-        </dd>
-        <dt>
-            OverAllRating
-        </dt>
-
-        <dd>
-            @ViewBag.OverAllRating
-        </dd>
-
-
-    </dl>
+    <h5 class="text-center me-4 lead mt-4">OverAllRating</h5>
+    @ViewBag.OverAllRating
 </div>
-<h1 class="h1">Reviews</h1>
+
+<h5 class="text-center me-4 lead mt-4">Reviews</h5>
 <div>
     @Html.Action("ReviewsPartialView", "Review", Model.PlanId)
 </div>
-<p>
-    @Html.ActionLink("Edit", "EditPlan", new { id = Model.PlanId }) |
-    @Html.ActionLink("Back to List", "View" + Model.PlanType + "Plans")
-</p>

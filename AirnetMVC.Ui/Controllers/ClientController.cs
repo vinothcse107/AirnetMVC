@@ -16,7 +16,12 @@ namespace AirnetMVC.Ui.Controllers
         {
             plansRepository = new PlansRepository();
         }
- 
+
+        public PartialViewResult GetPlanDetails(Guid id) {
+            Plan plan = plansRepository.GetPlanById(id);
+            return PartialView("~/Views/Shared/PartialViews/_PlanDetailsPartialView.cshtml", plan);
+        }
+
         [HttpGet]
         public ActionResult ViewPrepaidPlans()
         {

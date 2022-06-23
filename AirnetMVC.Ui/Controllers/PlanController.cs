@@ -44,9 +44,9 @@ namespace AirnetMVC.Ui.Controllers
             }
 
 
-            public ActionResult CreatePlan()
+            public PartialViewResult CreatePlan()
             {
-                  return View();
+                  return PartialView("~/Views/Plan/CreatePlan.cshtml");
             }
             [HttpPost]
             public ActionResult CreatePlan(Plan plan)
@@ -56,11 +56,11 @@ namespace AirnetMVC.Ui.Controllers
 
                   return RedirectToAction("View" + plan.PlanType + "Plans");
             }
-            public ActionResult PlanDetails(Guid id)
+            public PartialViewResult PlanDetails(Guid id)
             {
                   Plan plan = plansRepository.GetPlanById(id);
                   //ViewBag.OverAllRating = reviewsRepository.GetOverAllPlanRating(id);
-                  return View(plan);
+                  return PartialView("~/Views/Plan/PlanDetails.cshtml",plan);
             }
             public ActionResult DeletePlan(Guid id)
             {
@@ -68,10 +68,10 @@ namespace AirnetMVC.Ui.Controllers
                   plansRepository.DeletePlan(id);
                   return RedirectToAction("View" + plan.PlanType + "Plans");
             }
-            public ActionResult EditPlan(Guid id)
+            public PartialViewResult EditPlan(Guid id)
             {
                   Plan plan = plansRepository.GetPlanById(id);
-                  return View(plan);
+                  return PartialView("~/Views/Plan/EditPlan.cshtml", plan);
             }
             [HttpPost]
             public ActionResult EditPlan(Plan plan)

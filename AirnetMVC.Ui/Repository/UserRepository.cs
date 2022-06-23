@@ -35,6 +35,10 @@ namespace AirnetMVC.Ui.Repository
             return user;
         }
 
+        public Plan GetPlanById(Guid id) { 
+            return context.Plans.Find(id);
+        }
+
         public IEnumerable<User> GetAllUser()
         {
             var users = context.Users.ToList();

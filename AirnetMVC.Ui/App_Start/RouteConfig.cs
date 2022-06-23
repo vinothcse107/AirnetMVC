@@ -16,7 +16,7 @@ namespace AirnetMVC.Ui
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Plan", action = "ViewPrepaidPlans", id = UrlParameter.Optional }
+                defaults: new { controller = "Users", action = "Login", id = UrlParameter.Optional }
             );
         }
     }

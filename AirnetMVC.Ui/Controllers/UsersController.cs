@@ -82,5 +82,7 @@ namespace AirnetMVC.Ui.Controllers
             var x = userRepository.GetUserById(id);
             return View(x);
         }
+
+        
     }
 }
