@@ -11,17 +11,12 @@ namespace AirnetMVC.DataService
 {
     public class Review
     {
-        [Key, ForeignKey("RechargeReviewId")]
-        public Guid ReviewId { get; set; }
-        [JsonIgnore]
-        public virtual Recharge RechargeReviewId { get; set; }
-        // ----------------------------------------
-        [ForeignKey("User")]
+        [Column(Order=0) , Key, ForeignKey("User")]
         public string Username { get; set; }
         [JsonIgnore]
         public User User { get; set; }
         // ----------------------------------------
-        [ForeignKey("Plan")]
+        [Column(Order = 1), Key, ForeignKey("Plan")]
         public Guid PlanId { get; set; }
         [JsonIgnore]
         public Plan Plan { get; set; }

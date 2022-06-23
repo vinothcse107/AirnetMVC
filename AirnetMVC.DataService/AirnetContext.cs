@@ -26,25 +26,9 @@ namespace AirnetMVC.DataService
         public DbSet<Recharge> Recharges { get; set; }
         public DbSet<Review> Reviews { get; set; }
 
-        
-        // * Change the connection string to the ones in your System.
-        // * Change the Class library to Console Application. Set the DataService as startup file to create the tables.
-       /*
-        public static void Main(string[] args)
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            using (var context = new AirnetContext())
-            {
-                context.Plans.Create();
-                context.Users.Create();
-                context.Recharges.Create();
-                context.Reviews.Create();
-                context.SaveChanges();
-            }
+            modelBuilder.Entity<Review>().HasKey(r => new { r.Username, r.PlanId });
         }
-       */
-        
     }
-
-
-
 }

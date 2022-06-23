@@ -23,12 +23,6 @@ namespace AirnetMVC.Ui.Controllers
             public ActionResult ViewPrepaidPlans()
             {
                   IEnumerable<Plan> plans = plansRepository.GetPrepaidPlans();
-                  //List<double> rating = new List<double>();
-                  //foreach (var p in plans)
-                  //{
-                  //      rating.Add(reviewsRepository.GetOverAllPlanRating(p.PlanId));
-                  //}
-                  //ViewBag.OverAllRating = rating;
                   return View(plans);
             }
             public ActionResult ViewPostpaidPlans()
@@ -59,7 +53,7 @@ namespace AirnetMVC.Ui.Controllers
             public PartialViewResult PlanDetails(Guid id)
             {
                   Plan plan = plansRepository.GetPlanById(id);
-                  //ViewBag.OverAllRating = reviewsRepository.GetOverAllPlanRating(id);
+                  ViewBag.OverAllRating = new ReviewRepository().GetOverAllPlanRating(id);
                   return PartialView("~/Views/Plan/PlanDetails.cshtml",plan);
             }
             public ActionResult DeletePlan(Guid id)

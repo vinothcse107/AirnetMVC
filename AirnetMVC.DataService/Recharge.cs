@@ -13,8 +13,6 @@ namespace AirnetMVC.DataService
     {
         [Key]
         public Guid RechargeId { get; set; }
-        [JsonIgnore]
-        public Review Review { get; set; }
         // ----------------------------------------------
         [ForeignKey("User")]
         public string UserName { get; set; }

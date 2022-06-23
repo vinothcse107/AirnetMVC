@@ -12,6 +12,7 @@ namespace AirnetMVC.DataService
         [Key]
         public Guid PlanId { get; set; }
         public string PlanType { get; set; }
+        public string Data { get; set; }
         public string PlanName { get; set; }
         public int PlanValidity { get; set; }
         public string PlanDetails { get; set; }

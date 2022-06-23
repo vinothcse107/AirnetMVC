@@ -37,16 +37,16 @@ namespace AirnetMVC.Ui.Repository
             var planReviews = context.Reviews.Where(review => review.PlanId == PlanId);
             return planReviews;
         }
-        public Review GetReview(Guid ReviewId)
+        public IEnumerable<Review> GetAllUserReviews(string Username)
         {
-            var planReviews = context.Reviews.Where(review => review.ReviewId == ReviewId).FirstOrDefault();
+            var planReviews = context.Reviews.Where(review => review.Username == Username);
             return planReviews;
         }
-        public float GetOverAllPlanRating(Guid PlanId)
+        public int GetOverAllPlanRating(Guid PlanId)
         {
-            var planReviews = context.Reviews.Where(p => p.PlanId == PlanId) != null 
-                        ? (float)context.Reviews.Where(review => review.PlanId == PlanId)
-                        .Select(s => s.ReviewRating).Average() : 0.0f;
+            var planReviews = context.Reviews.FirstOrDefault(p => p.PlanId == PlanId) != null 
+                        ? (int)context.Reviews.Where(review => review.PlanId == PlanId)
+                        .Select(s => s.ReviewRating).Average() : 0;
             return planReviews;
         }
 
