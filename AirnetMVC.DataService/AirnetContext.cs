@@ -11,16 +11,18 @@ namespace AirnetMVC.DataService
 
     public class AirnetContext : DbContext
     {
-      
-        private static IDictionary<string, string> envVars = DotEnv.Fluent()
-            .WithExceptions()
-            .WithEnvFiles()
-            .WithTrimValues()
-            .WithOverwriteExistingVars()
-            .WithProbeForEnv(probeLevelsToSearch: 6)
-            .Read();
-        private static string con = envVars["CONNECTION_STRING"];
-        public AirnetContext() : base(con) {}
+        /*
+          private static IDictionary<string, string> envVars = DotEnv.Fluent()
+              .WithExceptions()
+              .WithEnvFiles()
+              .WithTrimValues()
+              .WithOverwriteExistingVars()
+              .WithProbeForEnv(probeLevelsToSearch: 6)
+              .Read();
+          private static string con = envVars["CONNECTION_STRING"];*/
+        static string con = @"Data Source = LAPTOP-G52R71IG;Initial Catalog = AirnetRecharge; Integrated Security = True";
+          public AirnetContext() : base(con) {}
+
         public DbSet<User> Users { get; set; }
         public DbSet<Plan> Plans { get; set; }
         public DbSet<Recharge> Recharges { get; set; }

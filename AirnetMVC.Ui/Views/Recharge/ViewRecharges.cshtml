@@ -1,0 +1,64 @@
+﻿@model IEnumerable<AirnetMVC.DataService.Recharge>
+
+@{
+    ViewBag.Title = "ViewRecharges";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+
+<h2>ViewRecharges</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Plans.PlanType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RechargeTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Plans.PlanType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RechargeTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RechargeId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RechargeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RechargeId })
+        </td>
+    </tr>
+}
+
+</table>
