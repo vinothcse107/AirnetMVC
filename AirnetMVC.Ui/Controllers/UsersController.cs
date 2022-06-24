@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Net;
+using System.Web.Security;
 
 namespace AirnetMVC.Ui.Controllers
 {
@@ -39,18 +40,37 @@ namespace AirnetMVC.Ui.Controllers
         public ActionResult Login(UserDTO _user)
         {
             var x = userRepository.GetUserById(_user.Username);
-            if (x == null) return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+            string status = "3";
+            if (x == null) { }/*return new HttpStatusCodeResult(HttpStatusCode.NotFound);*/
             else
             {
                 bool val = x.Username.Equals(_user.Username) && x.Password.Equals(_user.Password);
                 if (val)
                 {
-                    if (x.UserRole == "Admin") return RedirectToAction("ViewPrepaidPlans", "Plan");
-                    else if (x.UserRole == "Member") return RedirectToAction("ViewPrepaidPlans", "Client");
+                    Session["username"] = _user.Username;
+                    if (x.UserRole == "Admin")
+                    {
+                        status = "1";
+                        /*return RedirectToAction("ViewPrepaidPlans", "Plan");*/
+                    }
+                    else if (x.UserRole == "Member")
+                    {
+                        status = "2";
+                        /*return RedirectToAction("ViewPrepaidPlans", "Client");*/
+                    }
                 }
+
             }
-            return RedirectToAction("Login");
+            return  new JsonResult{Data = new { status = status }};
+            /*return RedirectToAction("Login");*/
         }
+
+        public ActionResult Logout() {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Login","Users");
+        }
+
         [HttpGet]
         public ActionResult ViewAllUsers()
         {

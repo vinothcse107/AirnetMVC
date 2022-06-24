@@ -273,6 +273,7 @@
     <Content Include="Views\Shared\PartialViews\_PlanDetailsPartialView.cshtml" />
     <Content Include="Views\Recharge\ViewRecharges.cshtml" />
     <Content Include="Views\Recharge\RechargeDetails.cshtml" />
+    <Content Include="Views\Recharge\AddRecharge.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

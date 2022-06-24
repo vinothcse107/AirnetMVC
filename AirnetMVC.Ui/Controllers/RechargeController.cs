@@ -11,10 +11,10 @@ namespace AirnetMVC.Ui.Controllers
     //[Route("[controller")]
     public class RechargeController : Controller
     {
-        public RechargeRepository rechargeRepository;
+        public RechargeRepository rechargeRepository;       
         public RechargeController()
         {
-            rechargeRepository = new RechargeRepository();
+            rechargeRepository = new RechargeRepository();          
         }
         // GET: Recharge
         [Route("GetAllRecharges")]
@@ -29,7 +29,7 @@ namespace AirnetMVC.Ui.Controllers
         }
         [HttpPost]
         public ActionResult AddRecharge(Recharge recharge)
-        {
+        {          
             rechargeRepository.AddRecharge(recharge);
             return RedirectToAction("ViewRecharges");
         }
