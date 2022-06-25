@@ -16,10 +16,10 @@ namespace AirnetMVC.Ui.Controllers
         {
             ReviewRepo = new ReviewRepository();
         }
-        public ActionResult AddReview(Guid PlanId)
+        public PartialViewResult AddReview(Guid PlanId)
         {
             CreatePlanId = PlanId;
-            return View();
+            return PartialView();
         }
 
         [HttpPost]
@@ -40,10 +40,10 @@ namespace AirnetMVC.Ui.Controllers
             return PartialView("/Views/Shared/PartialViews/ReviewsPartialView.cshtml", reviews);
         }
 
-        public ActionResult EditReviewPartialView(string User, Guid Plan)
+        public PartialViewResult EditReviewPartialView(string User, Guid Plan)
         {
             var review = ReviewRepo.GetReview(User,Plan);
-            return View(review);
+            return PartialView(review);
         }
         [HttpPost]
         public ActionResult EditReviewPartialView(Review review)
