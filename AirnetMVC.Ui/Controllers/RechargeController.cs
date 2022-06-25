@@ -11,51 +11,39 @@ namespace AirnetMVC.Ui.Controllers
     //[Route("[controller")]
     public class RechargeController : Controller
     {
-        public RechargeRepository rechargeRepository;       
+        public RechargeRepository rechargeRepository;
+        public static Guid SetPlanId;
         public RechargeController()
         {
             rechargeRepository = new RechargeRepository();          
         }
-        // GET: Recharge
-        [Route("GetAllRecharges")]
-        public ActionResult ViewRecharges()
+        public ActionResult AddRecharge(Guid id)
         {
-            IEnumerable<Recharge> recharges = rechargeRepository.GetRecharges();
-            return View(recharges);
-        }
-        public ActionResult AddRecharge()
-        {
+            SetPlanId = id;
             return View();
         }
         [HttpPost]
         public ActionResult AddRecharge(Recharge recharge)
         {          
+            recharge.RechargeId = Guid.NewGuid();
+            recharge.UserName = Session["username"].ToString();
+            recharge.PlanId = SetPlanId;
+            recharge.RechargeTime = DateTime.Parse(DateTime.Now.ToString("dd-MM-yyyy HH.mm.ss tt"));
+
             rechargeRepository.AddRecharge(recharge);
-            return RedirectToAction("ViewRecharges");
+            return RedirectToAction("RechargeHistory");
         }
         public ActionResult RechargeDetails(Guid id)
         {
             Recharge recharge = rechargeRepository.GetRechargeById(id);
             return View(recharge);
         }
-
-        public ActionResult DeleteRecharge(Guid id)
+        public ActionResult RechargeHistory()
         {
-            Recharge recharge = rechargeRepository.GetRechargeById(id);
-            rechargeRepository.DeleteRecharge(recharge);
-            
-            return RedirectToAction("ViewRecharges");
-        }
-        public ActionResult EditRecharge(Guid id)
-        {
-            Recharge recharge = rechargeRepository.GetRechargeById(id);
+            var recharge = rechargeRepository.GetRechargesByUser(Session["username"].ToString());
             return View(recharge);
         }
-        [HttpPost]
-        public ActionResult EditRecharge(Recharge recharge)
-        {
-            rechargeRepository.EditRecharge(recharge);
-            return RedirectToAction("ViewRecharges");
-        }
+
+
     }
 }

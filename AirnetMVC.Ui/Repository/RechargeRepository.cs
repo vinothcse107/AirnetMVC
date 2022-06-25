@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using AirnetMVC.DataService;
@@ -18,17 +19,6 @@ namespace AirnetMVC.Ui.Repository
             context.Recharges.Add(recharge);
             context.SaveChanges();
         }
-        public void EditRecharge(Recharge recharge)
-        {
-            context.Entry(recharge).State = System.Data.Entity.EntityState.Modified;
-            context.SaveChanges();
-        }
-
-        public void DeleteRecharge(Recharge rechargeId)
-        {
-            context.Recharges.Remove(rechargeId);
-            context.SaveChanges();
-        }
 
         public Recharge GetRechargeById(Guid rechargeId)
         {
@@ -36,9 +26,10 @@ namespace AirnetMVC.Ui.Repository
             return recharge;
         }
 
-        public List<Recharge> GetRecharges()
+        public IEnumerable<Recharge> GetRechargesByUser(string user)
         {
-            return context.Recharges.ToList();
+            var x = context.Recharges.Where(w => w.UserName.Equals(user)).Include(i => i.Plans);
+            return x;
         }
     }
 }

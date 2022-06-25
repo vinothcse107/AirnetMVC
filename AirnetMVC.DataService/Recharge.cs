@@ -25,6 +25,7 @@ namespace AirnetMVC.DataService
         public DateTime RechargeTime { get; set; }
         // ----------------------------------------------
         [ForeignKey("Plans")]
+
         public Guid PlanId { get; set; }
         [JsonIgnore]
         public Plan Plans { get; set; }

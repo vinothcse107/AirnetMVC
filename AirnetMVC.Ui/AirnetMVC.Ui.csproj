@@ -272,7 +272,7 @@
     <Content Include="Views\Client\ViewPostpaidPlans.cshtml" />
     <Content Include="Views\Client\ViewAddonPlans.cshtml" />
     <Content Include="Views\Shared\PartialViews\_PlanDetailsPartialView.cshtml" />
-    <Content Include="Views\Recharge\ViewRecharges.cshtml" />
+    <Content Include="Views\Recharge\RechargeHistory.cshtml" />
     <Content Include="Views\Recharge\RechargeDetails.cshtml" />
     <Content Include="Views\Recharge\AddRecharge.cshtml" />
     <Content Include="Views\Review\EditReviewPartialView.cshtml" />

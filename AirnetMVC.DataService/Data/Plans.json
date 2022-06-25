@@ -2,7 +2,7 @@
   {
     "PlanId": "81fcfcc0-9950-430a-a4f8-50b3c7b988f4",
     "PlanType": "Postpaid",
-    "Data": "1.5",
+    "Data": "1.5 Gb/Day",
     "PlanName": "proident ipsum",
     "PlanValidity": 34,
     "PlanDetails": "In occaecat amet in eiusmod deserunt reprehenderit incididunt commodo elit consequat consectetur duis est. Proident consectetur magna elit sunt consequat incididunt anim aute Lorem.",
@@ -12,7 +12,7 @@
   {
     "PlanId": "076daaf0-103f-4ab5-a5fc-da8bee070cfc",
     "PlanType": "Addon",
-    "Data": "35",
+    "Data": "35 Gb/Month",
     "PlanName": "deserunt excepteur",
     "PlanValidity": 69,
     "PlanDetails": "Exercitation adipisicing nostrud irure velit ea minim aliquip. Voluptate anim occaecat dolore eu.",
@@ -22,7 +22,7 @@
   {
     "PlanId": "d67efa2f-d7fe-4eb9-93e2-c5dda51e7592",
     "PlanType": "Prepaid",
-    "Data": "2",
+    "Data": "2 Gb/Day",
     "PlanName": "anim velit",
     "PlanValidity": 35,
     "PlanDetails": "Id consectetur officia esse labore dolore elit in laboris reprehenderit in incididunt irure. Aute duis do minim aliqua anim tempor ea tempor do adipisicing magna ex.",
@@ -42,7 +42,7 @@
   {
     "PlanId": "c687f0e7-a783-477b-82cf-16fcc573521d",
     "PlanType": "Addon",
-    "Data": "25",
+    "Data": "25 Gb/Month",
     "PlanName": "officia enim",
     "PlanValidity": 30,
     "PlanDetails": "Nostrud exercitation reprehenderit consectetur sit reprehenderit nisi. Sit mollit laboris eiusmod quis fugiat dolore sit velit adipisicing magna velit ex.",
@@ -52,7 +52,7 @@
   {
     "PlanId": "cbd3c61c-7e3b-4a41-b400-256545cbe271",
     "PlanType": "Postpaid",
-    "Data": "2.5",
+    "Data": "2.5 Gb/Day",
     "PlanName": "laborum minim",
     "PlanValidity": 81,
     "PlanDetails": "Sunt fugiat deserunt cupidatat amet quis qui culpa sint. Est culpa tempor aute ut sunt fugiat ea cillum aliquip consectetur eiusmod est excepteur est.",
@@ -62,7 +62,7 @@
   {
     "PlanId": "a9c7fb2b-a786-472d-a7a8-36bb5f89550a",
     "PlanType": "Postpaid",
-    "Data": "4",
+    "Data": "4 Gb/Day",
     "PlanName": "id id",
     "PlanValidity": 71,
     "PlanDetails": "Non eiusmod voluptate tempor cillum aliqua excepteur velit reprehenderit veniam enim consequat. Qui dolore pariatur ullamco veniam cillum.",
@@ -72,7 +72,7 @@
   {
     "PlanId": "dfc2049c-2488-47fb-b7a3-dd38fede24ef",
     "PlanType": "Addon",
-    "Data": "30",
+    "Data": "30Gb/Month",
     "PlanName": "commodo adipisicing",
     "PlanValidity": 72,
     "PlanDetails": "Consequat eu nisi nulla sint consequat culpa excepteur anim. Ullamco in nostrud ipsum exercitation non ut mollit minim ea.",
@@ -82,7 +82,7 @@
   {
     "PlanId": "9cf9ef08-d0fb-4cec-8e33-c0fd13bebd91",
     "PlanType": "Postpaid",
-    "Data": "2.5",
+    "Data": "2.5 Gb/Day",
     "PlanName": "labore occaecat",
     "PlanValidity": 48,
     "PlanDetails": "Lorem pariatur elit anim sint ea cillum consequat qui occaecat Lorem irure. Velit veniam et et mollit dolore adipisicing nulla amet sint.",
@@ -92,7 +92,7 @@
   {
     "PlanId": "07de1c81-bc1b-4d87-94d2-fdc4a642a1da",
     "PlanType": "Prepaid",
-    "Data": "3.5",
+    "Data": "3.5 Gb/Day",
     "PlanName": "sint aute",
     "PlanValidity": 71,
     "PlanDetails": "Sunt ad eu pariatur laboris deserunt anim voluptate laborum irure voluptate ea amet. Tempor cupidatat sint nulla cupidatat.",

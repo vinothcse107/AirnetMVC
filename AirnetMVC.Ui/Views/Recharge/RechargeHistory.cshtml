@@ -6,17 +6,16 @@
 }
 
 <h2>ViewRecharges</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Plans.PlanType)
+            @Html.DisplayNameFor(model => model.Plans.PlanPrice)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.User.Email)
+            @Html.DisplayNameFor(model => model.Plans.PlanName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Plans.Data)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
@@ -36,11 +35,14 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Plans.PlanType)
+            @Html.DisplayFor(modelItem => item.Plans.PlanPrice)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.User.Email)
-        </td>
+        <th>
+            @Html.DisplayFor(model => item.Plans.PlanName)
+        </th>
+        <th>
+            @Html.DisplayFor(model => item.Plans.Data)
+        </th>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
@@ -52,11 +54,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.RechargeTime)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.RechargeId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.RechargeId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.RechargeId })
         </td>
     </tr>
 }
