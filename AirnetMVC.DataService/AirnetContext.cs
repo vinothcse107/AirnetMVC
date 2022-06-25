@@ -20,8 +20,10 @@ namespace AirnetMVC.DataService
               .WithProbeForEnv(probeLevelsToSearch: 6)
               .Read();
           private static string con = envVars["CONNECTION_STRING"];*/
-        static string con = @"Data Source =VIDHYAMINI\SQLEXPRESS ;Initial Catalog = AirnetRecharge; Integrated Security = True";
-          public AirnetContext() : base(con) {}
+        //static string con = @"Data Source =VIDHYAMINI\SQLEXPRESS ;Initial Catalog = AirnetRecharge; Integrated Security = True";
+        static string con = @"Data Source =VINOTH\SQLEXPRESS ;Initial Catalog = AirnetRecharge; Integrated Security = True";
+
+        public AirnetContext() : base(con) {}
 
         public DbSet<User> Users { get; set; }
         public DbSet<Plan> Plans { get; set; }

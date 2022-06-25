@@ -1,6 +1,14 @@
 ﻿@model IEnumerable<AirnetMVC.DataService.Review>
 
 <div class="justify-content-center"></div>
+@{ 
+
+    if(!Model.Any(a => Session["username"].ToString().Equals(a.Username)))
+    {
+        <button class="btn btn-secondary text-white">@Html.ActionLink("Create", "AddReview" , new {PlanId = ViewBag.PlanId })</button>
+    }
+
+}
 @foreach (var item in Model)
 {
     <div class="card w-100">
@@ -15,8 +23,14 @@
                     </svg>
                 }
             </h5>
-            @*<button class="btn btn-secondary text-white">@Html.ActionLink("Edit", "Review", new { id = item.ReviewId })</button>*@
-            @*<button class="btn btn-danger text-white">@Html.ActionLink("Delete", "Delete", new { id = item.ReviewId }) </button>*@
+
+            @if (Session["username"].ToString().Equals( item.Username))
+            {
+                <button class="btn btn-secondary text-white">@Html.ActionLink("Edit", "EditReviewPartialView", new { User = Session["username"] , Plan = item.PlanId })</button>
+                <button class="btn btn-danger text-white">@Html.ActionLink("Delete", "DeleteReview", new { User = Session["username"], Plan = item.PlanId }) </button>
+            }
+
+
         </div>
     </div>
     <br />

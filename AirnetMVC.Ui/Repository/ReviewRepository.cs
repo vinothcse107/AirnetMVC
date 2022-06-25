@@ -26,10 +26,16 @@ namespace AirnetMVC.Ui.Repository
             context.Entry(review).State = EntityState.Modified;
             context.SaveChanges();
         }
-        public void DeleteReview(Review review)
+        public Review GetReview(string User, Guid Plan)
         {
+            var Review = context.Reviews.FirstOrDefault(w => w.Username == User && w.PlanId == Plan); ;
+            return Review;
+        }
+        public void DeleteReview(string User , Guid Plan)
+        {
+            var review = context.Reviews.FirstOrDefault(w => w.Username == User && w.PlanId == Plan);
             context.Reviews.Remove(review);
-            context.SaveChanges();
+            context.SaveChanges();            
         }
 
         public IEnumerable<Review> GetReviews(Guid PlanId)

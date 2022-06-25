@@ -275,10 +275,11 @@
     <Content Include="Views\Recharge\ViewRecharges.cshtml" />
     <Content Include="Views\Recharge\RechargeDetails.cshtml" />
     <Content Include="Views\Recharge\AddRecharge.cshtml" />
+    <Content Include="Views\Review\EditReviewPartialView.cshtml" />
+    <Content Include="Views\Review\AddReview.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Review\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
