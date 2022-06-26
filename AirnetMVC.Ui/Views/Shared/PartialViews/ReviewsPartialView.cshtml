@@ -5,19 +5,20 @@
 
     if (!Model.Any(a => Session["username"].ToString().Equals(a.Username)))
     {
-        <div class="text-center">@Ajax.ActionLink("Write a Review", "AddReview", new { PlanId = ViewBag.PlanId },
-                                new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "divCreate", InsertionMode = InsertionMode.Replace },
-                                htmlAttributes: new { @class = "lead me-4 text-decoration-none link-primary" })
-        </div>
-        <div id="divCreate">
+        <div class="text-center">
+            @Ajax.ActionLink("Write a Review", "AddReview", new { PlanId = ViewBag.PlanId },
+       new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "divRewCreate", InsertionMode = InsertionMode.Replace },
+       htmlAttributes: new { @class = "lead me-4 text-decoration-none link-primary" })
+    </div>
+    <div id="divRewCreate">
 
-        </div>
-    }
+    </div>
+}
 
 }
 @foreach (var item in Model)
 {
-    <div id="divEdit">
+    <div id= @item.Username>
         <div class="card w-100">
             <div class="card-body">
                 <div class="d-flex justify-content-between">
@@ -27,7 +28,7 @@
                         @if (Session["username"].ToString().Equals(item.Username))
                         {
                             @Ajax.ActionLink("Edit", "EditReviewPartialView", new { User = Session["username"], Plan = item.PlanId },
-                                new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "divEdit", InsertionMode = InsertionMode.Replace },
+                                new AjaxOptions { HttpMethod = "GET", UpdateTargetId = @item.Username, InsertionMode = InsertionMode.Replace },
                                 htmlAttributes: new { @class = "lead text-decoration-none link-primary mx-3" })
 
                             @Html.ActionLink("Delete", "DeleteReview", new { User = Session["username"], Plan = item.PlanId }, htmlAttributes: new { @class = "lead text-decoration-none link-danger" })
@@ -50,6 +51,6 @@
         </div>
     </div>
     <br />
-
+        
 
 }

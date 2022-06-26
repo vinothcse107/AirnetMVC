@@ -39,7 +39,7 @@
                     @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger", @for = "floatingInput3" })
                 </div><br>
                 <div class="form-floating mb-3">
-                    @Html.EditorFor(model => model.MobileNumber, new { htmlAttributes = new { @class = "form-control border-0 shadow-none border-bottom", @id = "floatingInput4", @placeholder = "+91", @type = "number", @required = "true" } })
+                    @Html.EditorFor(model => model.MobileNumber, new { htmlAttributes = new { @class = "form-control border-0 shadow-none border-bottom", @id = "floatingInput4", @type = "text", @pattern = "\\d*", @maxlength = "10", @required = "true" } })
                     @Html.LabelFor(model => model.MobileNumber, htmlAttributes: new { @class = "control-label", @for = "floatingInput4" })
                     @Html.ValidationMessageFor(model => model.MobileNumber, "", new { @class = "text-danger", @for = "floatingInput4" })
 

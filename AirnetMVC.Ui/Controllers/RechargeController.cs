@@ -17,10 +17,10 @@ namespace AirnetMVC.Ui.Controllers
         {
             rechargeRepository = new RechargeRepository();          
         }
-        public ActionResult AddRecharge(Guid id)
+        public PartialViewResult AddRecharge(Guid id)
         {
             SetPlanId = id;
-            return View();
+            return PartialView();
         }
         [HttpPost]
         public ActionResult AddRecharge(Recharge recharge)

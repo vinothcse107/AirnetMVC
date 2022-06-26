@@ -11,10 +11,12 @@ namespace AirnetMVC.Ui.Controllers
     public class ReviewController : Controller
     {
         public ReviewRepository ReviewRepo;
+        public PlansRepository PlansRepo;
         public static Guid CreatePlanId;
         public ReviewController()
         {
             ReviewRepo = new ReviewRepository();
+            PlansRepo = new PlansRepository(); 
         }
         public PartialViewResult AddReview(Guid PlanId)
         {
@@ -27,8 +29,9 @@ namespace AirnetMVC.Ui.Controllers
         {
             review.Username = Session["username"].ToString();
             review.PlanId = CreatePlanId;
+            Plan plan = PlansRepo.GetPlanById(review.PlanId);
             ReviewRepo.AddReview(review);
-            return RedirectToAction("ViewPrepaidPlans", "Client");
+            return RedirectToAction("View"+plan.PlanType+"Plans", "Client");
         }
 
         // GET: Review
@@ -49,12 +52,14 @@ namespace AirnetMVC.Ui.Controllers
         public ActionResult EditReviewPartialView(Review review)
         {
             ReviewRepo.EditReview(review);
-            return RedirectToAction("ViewPrepaidPlans", "Client");
+            Plan plan = PlansRepo.GetPlanById(review.PlanId);
+            return RedirectToAction("View"+ plan.PlanType+ "Plans", "Client");
         }
         public ActionResult DeleteReview(string User, Guid Plan)
         {
             ReviewRepo.DeleteReview(User, Plan);
-            return RedirectToAction("ViewPrepaidPlans", "Client");
+            Plan plan = PlansRepo.GetPlanById(Plan);
+            return RedirectToAction("View"+plan.PlanType+"Plans", "Client");
         }
     }
 }
