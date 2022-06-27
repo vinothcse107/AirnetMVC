@@ -11,17 +11,17 @@ namespace AirnetMVC.DataService
 
     public class AirnetContext : DbContext
     {
-        /*
-          private static IDictionary<string, string> envVars = DotEnv.Fluent()
-              .WithExceptions()
-              .WithEnvFiles()
-              .WithTrimValues()
-              .WithOverwriteExistingVars()
-              .WithProbeForEnv(probeLevelsToSearch: 6)
-              .Read();
-          private static string con = envVars["CONNECTION_STRING"];*/
+
+        private static IDictionary<string, string> envVars = DotEnv.Fluent()
+            .WithExceptions()
+            .WithEnvFiles()
+            .WithTrimValues()
+            .WithOverwriteExistingVars()
+            .WithProbeForEnv(probeLevelsToSearch: 6)
+            .Read();
+        private static string con = envVars["CONNECTION_STRING"];
         //static string con = @"Data Source =VIDHYAMINI\SQLEXPRESS ;Initial Catalog = AirnetRecharge; Integrated Security = True";
-        static string con = @"Data Source =LIGHT\SQLEXPRESS ;Initial Catalog = AirnetRecharge; Integrated Security = True";
+        /*static string con = @"Data Source =LIGHT\SQLEXPRESS ;Initial Catalog = AirnetRecharge; Integrated Security = True";*/
         /*static string con = @"Data Source =VINOTH\SQLEXPRESS ;Initial Catalog = AirnetRecharge; Integrated Security = True";*/
 
 
