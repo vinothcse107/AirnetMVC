@@ -16,3 +16,14 @@ SEED_DATASOURCE value is a location of Data folder in DataService Layer
 ![data file](https://user-images.githubusercontent.com/50076113/175870368-6f7e57d4-7454-4937-a0ce-d41093aebfae.jpeg)
 
 Copy its absolute path and set it as SEED_DATASOURCE value
+
+
+
+Default Admin Configuration
+Username :- vinosiva
+Password :- password
+
+
+Default Client/User Configuration
+Username :- Cara
+Password :- Leblanc
