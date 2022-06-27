@@ -18,7 +18,7 @@ SEED_DATASOURCE value is a location of Data folder in DataService Layer
 Copy its absolute path and set it as SEED_DATASOURCE value
 
 
-
+```
 Default Admin Configuration
 Username :- vinosiva
 Password :- password
@@ -27,3 +27,4 @@ Password :- password
 Default Client/User Configuration
 Username :- Cara
 Password :- Leblanc
+```
