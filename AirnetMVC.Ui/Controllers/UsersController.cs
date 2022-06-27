@@ -76,10 +76,10 @@ namespace AirnetMVC.Ui.Controllers
                   return View(x);
             }
 
-            public ActionResult EditUser(string id)
+            public PartialViewResult EditUser(string id)
             {
                   var x = userRepository.GetUserById(id);
-                  return View(x);
+                  return PartialView(x);
             }
 
             [HttpPost]
@@ -95,10 +95,10 @@ namespace AirnetMVC.Ui.Controllers
                   return RedirectToAction("ViewAllUsers");
             }
 
-            public ActionResult ViewUserDetail(string id)
+            public PartialViewResult ViewUserDetail(string id)
             {
                   var x = userRepository.GetUserById(id);
-                  return View(x);
+                  return PartialView(x);
             }
 
 
