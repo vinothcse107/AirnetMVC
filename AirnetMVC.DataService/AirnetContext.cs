@@ -21,8 +21,8 @@ namespace AirnetMVC.DataService
             .Read();
         private static string con = envVars["CONNECTION_STRING"];
         //static string con = @"Data Source =VIDHYAMINI\SQLEXPRESS ;Initial Catalog = AirnetRecharge; Integrated Security = True";
-        /*static string con = @"Data Source =LIGHT\SQLEXPRESS ;Initial Catalog = AirnetRecharge; Integrated Security = True";*/
-        /*static string con = @"Data Source =VINOTH\SQLEXPRESS ;Initial Catalog = AirnetRecharge; Integrated Security = True";*/
+        //static string con = @"Data Source =LIGHT\SQLEXPRESS ;Initial Catalog = AirnetRecharge; Integrated Security = True";
+        //static string con = @"Data Source =VINOTH\SQLEXPRESS ;Initial Catalog = AirnetRecharge; Integrated Security = True";
 
 
         public AirnetContext() : base(con) {}

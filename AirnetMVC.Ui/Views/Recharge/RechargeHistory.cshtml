@@ -38,7 +38,7 @@
 @foreach (var item in Model) {
 <tr>
     <td>
-        @Html.DisplayFor(modelItem => item.Plans.PlanPrice)₹
+        ₹ @Html.DisplayFor(modelItem => item.Plans.PlanPrice)
     </td>
     <th>
         @Html.DisplayFor(model => item.Plans.PlanName)
