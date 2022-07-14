@@ -28,3 +28,4 @@ Default Client/User Configuration
 Username :- Cara
 Password :- Leblanc
 ```
+Ajax_ActionLink : https://www.webtrainingroom.com/aspnetmvc/ajaxlink
